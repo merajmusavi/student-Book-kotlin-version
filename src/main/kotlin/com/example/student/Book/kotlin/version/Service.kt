@@ -5,7 +5,7 @@ import com.example.student.Book.kotlin.version.StudentRepo
 import org.springframework.stereotype.Service
 
 @Service
-class Service(val repo : StudentRepo) {
+class Service(val repo: StudentRepo) {
     fun insertUser(stu: Student) {
         repo.save(stu)
     }
@@ -14,7 +14,11 @@ class Service(val repo : StudentRepo) {
         return repo.findUserByEmailAddress(email)
     }
 
-    fun findAllStudents(): List<Student>{
+    fun findAllStudents(): List<Student> {
         return repo.findAll();
+    }
+
+    fun deleteUser(email: String) {
+        repo.deleteUserBasedOnEmail(email)
     }
 }

@@ -1,5 +1,6 @@
 package com.example.student.Book.kotlin.version
 
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -25,5 +26,10 @@ class Controller(val apiService: Service) {
     @GetMapping("all")
     fun findAllUsers():List<Student>{
         return apiService.findAllStudents();
+    }
+
+    @DeleteMapping
+    fun deleteUser(map : Map<String,String>){
+        return apiService.deleteUser(map.get("email"));
     }
 }
