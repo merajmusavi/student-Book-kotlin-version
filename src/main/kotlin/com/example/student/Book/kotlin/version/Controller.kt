@@ -21,4 +21,9 @@ class Controller(val apiService: Service) {
     fun findStudentByEmail(@PathVariable email: String): Student {
        return apiService.findByEmail(email);
     }
+
+    @GetMapping("all")
+    fun findAllUsers():List<Student>{
+        return apiService.findAllStudents();
+    }
 }

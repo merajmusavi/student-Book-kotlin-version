@@ -13,4 +13,8 @@ class Service(val repo : StudentRepo) {
     fun findByEmail(email: String): Student {
         return repo.findUserByEmailAddress(email)
     }
+
+    fun findAllStudents(): List<Student>{
+        return repo.findAll();
+    }
 }
