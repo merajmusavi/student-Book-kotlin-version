@@ -30,6 +30,13 @@ class Controller(val apiService: Service) {
 
     @DeleteMapping
     fun deleteUser(map : Map<String,String>){
-        return apiService.deleteUser(map.get("email"));
+        return apiService.deleteUser(map.get("email").toString());
+    }
+
+    @PostMapping("idcard")
+    fun InsertStudentWithIdCard(@RequestBody stu : StudentIdCard){
+        apiService.SaveIdCardAndStudent(stu)
+        println(stu.cardNumber)
+        println(stu.student?.id.toString())
     }
 }

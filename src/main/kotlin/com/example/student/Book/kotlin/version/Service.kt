@@ -5,7 +5,7 @@ import com.example.student.Book.kotlin.version.StudentRepo
 import org.springframework.stereotype.Service
 
 @Service
-class Service(val repo: StudentRepo) {
+class Service(val repo: StudentRepo,val idCardRepo : StudentIdCardRepo) {
     fun insertUser(stu: Student) {
         repo.save(stu)
     }
@@ -20,5 +20,8 @@ class Service(val repo: StudentRepo) {
 
     fun deleteUser(email: String) {
         repo.deleteUserBasedOnEmail(email)
+    }
+    fun SaveIdCardAndStudent(idCard: StudentIdCard){
+        idCardRepo.save(idCard)
     }
 }

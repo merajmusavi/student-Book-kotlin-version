@@ -10,8 +10,7 @@ data class Student(
 
 
 
-    @SequenceGenerator(name = "seq", sequenceName = "seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
         name = "id",
         nullable = false
@@ -20,7 +19,7 @@ data class Student(
     val id: Long? = null,
 
 
-    @Column(name = "first_name", nullable = false,)
+    @Column(name = "first_name")
 
     val firstName: String? = null,
 
@@ -31,7 +30,7 @@ data class Student(
 
 
     @Column(name = "age")
-    val age : Int
+    val age : Int? = null
 
 )
 
