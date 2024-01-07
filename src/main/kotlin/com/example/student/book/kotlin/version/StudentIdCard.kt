@@ -1,7 +1,6 @@
-package com.example.student.Book.kotlin.version
+package com.example.student.book.kotlin.version
 
 import jakarta.persistence.*
-import org.hibernate.engine.internal.Cascade
 
 @Entity(name = "student_id_card_kt")
 @Table(name = "student_id_card_kt_tb")
@@ -19,7 +18,8 @@ data class StudentIdCard(
     @Column(
         name = "student_id_card",
         length = 15,
-        columnDefinition = "TEXT"
+        columnDefinition = "TEXT",
+        unique = true
     )
     var cardNumber:String? = null,
 

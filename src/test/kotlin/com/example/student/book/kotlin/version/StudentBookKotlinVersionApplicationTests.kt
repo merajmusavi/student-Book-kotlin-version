@@ -1,4 +1,4 @@
-package com.example.student.Book.kotlin.version
+package com.example.student.book.kotlin.version
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
